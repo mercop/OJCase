@@ -1,6 +1,5 @@
 package contest.L360;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class L02 {
@@ -8,10 +7,11 @@ public class L02 {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] scores = new int[n];
-        int i = 0;
-        while (in.hasNextInt()) {//注意while处理多个case
+
+        for(int i = 0; i < n; i++){
             scores[i++] = in.nextInt();
         }
+        int i = 0;
         int[] result = new int[n];
         for(i = 1 ; i < scores.length; i++){
             int j = i - 1;
@@ -22,6 +22,9 @@ public class L02 {
             }
         }
 
-        System.out.println(Arrays.toString(result));
+        for(i = 0; i < result.length -1; i ++)
+            System.out.print(result[i] + " ");
+        System.out.print(result[result.length -1]);
+
     }
 }
