@@ -13,13 +13,13 @@ public class L02 {
             scores[i++] = in.nextInt();
         }
         int[] result = new int[n];
-        for(i = 0; i < scores.length; i++){
-            int sum = 0;
-            for(int j = 0; j < i; j ++){
-                if(scores[i] < scores[j])
-                    sum ++;
+        for(i = 1 ; i < scores.length; i++){
+            int j = i - 1;
+            while(j >= 0){
+                if(scores[j] > scores[i]){
+                    result[i] += 1;
+                } j --;
             }
-            result[i] = sum;
         }
 
         System.out.println(Arrays.toString(result));
