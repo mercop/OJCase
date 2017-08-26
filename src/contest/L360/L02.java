@@ -1,5 +1,6 @@
 package contest.L360;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class L02 {
@@ -11,13 +12,16 @@ public class L02 {
         while (in.hasNextInt()) {//注意while处理多个case
             scores[i++] = in.nextInt();
         }
+        int[] result = new int[n];
         for(i = 0; i < scores.length; i++){
             int sum = 0;
             for(int j = 0; j < i; j ++){
                 if(scores[i] < scores[j])
                     sum ++;
             }
-            System.out.print(sum + " ");
+            result[i] = sum;
         }
+
+        System.out.println(Arrays.toString(result));
     }
 }
