@@ -1,7 +1,5 @@
 package LeetCode;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +26,8 @@ public class LC77 {
             lists.add(res);
             return;
         }
-
+        //减枝优化
+        // n- (k - res.size()) + 1
         for (int i = index; i <= n; i++) {
             res.add(i);
             getCombinations(n, k, i + 1, new ArrayList<>(res));
@@ -36,9 +35,5 @@ public class LC77 {
         }
     }
 
-    //优化
-    @Test
-    public void test(){
 
-    }
 }
