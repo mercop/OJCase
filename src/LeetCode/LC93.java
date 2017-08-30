@@ -7,7 +7,7 @@ import java.util.List;
  * Created by mercop on 2017/8/29.
  * <p>
  * public List<String> restoreIpAddresses(String s) {
- * <p>
+ * IP的所有可能性
  * }
  */
 public class LC93 {

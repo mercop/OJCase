@@ -30,7 +30,6 @@ public class Permutation {
             lists.add(res);
             return;
         }
-
         for(int i = 0; i < nums.length;i++){
             if(!used[i]){
                 res.add(nums[i]);
@@ -42,7 +41,5 @@ public class Permutation {
                 used[i] = false;
             }
         }
-
     }
-
 }

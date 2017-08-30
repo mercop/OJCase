@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * 超时
  */
 
-public class lc4902 {
+public class LC4602 {
 
     public static void main(String[] args) {
 

@@ -2,6 +2,11 @@ package contest.toutiao;
 
 /**
  * Created by mercop on 2017/8/22.
+ * 超时
+ *
+ * https://www.nowcoder.com/discuss/34191
+ *
+ * 思路 先排序x，在从后向前对外进行操作，如果当前点大于当前集合最大点y，则属于，否则，不属于
  */
 import java.util.Scanner;
 

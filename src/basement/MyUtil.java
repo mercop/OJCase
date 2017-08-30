@@ -22,7 +22,6 @@ public class MyUtil {
     static int[] generateOrderedArray(int n) {
 
         assert( n > 0 );
-
         int[] arr = new int[n];
 
         for (int i = 0; i < n; i++)

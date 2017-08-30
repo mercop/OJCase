@@ -1,6 +1,7 @@
 package LeetCode;
 
 import model.TreeNode;
+import org.junit.Test;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -48,5 +49,13 @@ public class LC111 {
             this.key = key;
             this.value = value;
         }
+    }
+
+
+
+    //递归解法
+    @Test
+    public void test(){
+
     }
 }
