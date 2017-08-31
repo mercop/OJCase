@@ -15,7 +15,7 @@ public class meituan01 {
             nums[i] = sc.nextInt();
         int k = sc.nextInt();
 
-        System.out.println(getANS(nums, 5));
+        System.out.println(getANS(nums, k));
     }
 
     static int[] sums;
@@ -32,6 +32,7 @@ public class meituan01 {
     }
 
     public static int process(int[] nums, int sum, int p, int q, int k) {
+        if(p < 0 || p >= nums.length || q <0 || q >= nums.length) return 0;
         if (sum % k == 0) return q - p + 1;
         else {
             return Integer.max(process(nums, sum - nums[q], p, q - 1, k), process(nums, sum - nums[p], p + 1, q, k));
