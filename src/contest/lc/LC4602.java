@@ -1,5 +1,7 @@
 package contest.lc;
 
+import model.TreeNode;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -69,12 +71,4 @@ public class LC4602 {
         }
         return maxWidth;
     }
-}
-
-class TreeNode {
-
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
 }

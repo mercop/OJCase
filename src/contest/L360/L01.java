@@ -2,6 +2,9 @@ package contest.L360;
 
 import java.util.Scanner;
 
+/**
+ * Created by mercop on 2017/8/31.
+ */
 public class L01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

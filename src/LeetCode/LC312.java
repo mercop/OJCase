@@ -42,36 +42,22 @@ public class LC312 {
         int[] nums = new int[]{3,1,5,8};
         System.out.println(maxCoins2(nums));
     }
-    //动态规划-未完成
-    public static int maxCoins2(int[] nums) {
-        int[] numsNew = new int[nums.length + 2];
-        numsNew[0] = 1;
-        numsNew[numsNew.length -1 ] = 1;
-        for(int i = 0; i < nums.length; i++){
-            numsNew[i + 1] = nums[i];
-        }
-        return process2(numsNew,1, numsNew.length - 2);
-    }
+    //动态规划-
+    public int maxCoins2(int[] iNums) {
+        int[] nums = new int[iNums.length + 2];
+        int n = 1;
+        for (int x : iNums) if (x > 0) nums[n++] = x;
+        nums[0] = nums[n++] = 1;
 
-    public static int process2(int[] nums, int p, int q){
+        int[][] dp = new int[n][n];
+        for (int k = 2; k < n; ++k)
+            for (int l = 0; l < n - k; ++l) {
+                int r = l + k;
+                for (int m = l + 1; m < r; ++m)
+                    dp[l][r] = Math.max(dp[l][r],
+                            nums[l] * nums[m] * nums[r] + dp[l][m] + dp[m][r]);
+            }
 
-        int[][] pqMatrix = new int[nums.length][ nums.length];
-
-        for(int i = 0;i < nums.length; i ++){
-            pqMatrix[i][i] = nums[i];
-        }
-
-        for(int j = p;j <= q ; j ++)
-        for(int i = p ; i <= q; i ++){
-            int maxp = nums[i -1] * nums[i] * nums[ j + 1] + pqMatrix[i + 1][Integer.min(q,i+j)];
-            int maxq = nums[i - 1] * nums[i] * nums[j + 1] + pqMatrix[i][Integer.min(q,i+j -1)];
-            int max = Integer.max(maxp,maxq);
-
-
-
-            pqMatrix[i][Integer.min(q,i+j)] = pqMatrix[i][Integer.min(q,i+j -1)] + pqMatrix[i + 1][Integer.min(q,i+j)];
-        }
-
-        return pqMatrix[p][q];
+        return dp[0][n - 1];
     }
 }

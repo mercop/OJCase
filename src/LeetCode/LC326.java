@@ -1,5 +1,8 @@
 package LeetCode;
 
+/**
+ * Created by mercop on 2017/8/31.
+ */
 public class LC326 {
     public static void main(String[] args) {
         System.out.println(isPowerOfThree(81));
