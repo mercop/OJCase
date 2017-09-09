@@ -1,5 +1,7 @@
 package LeetCode;
 
+import org.junit.Test;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -53,5 +55,34 @@ public class LC279 {
             this.key = key;
             this.value = value;
         }
+    }
+
+
+    //动态规划思路
+    public static int numSquares2(int n) {
+        int[] nums = new int[n + 1];
+        nums[1] = 1;
+        for(int i= 2; i < nums.length; i++)
+            nums[i] = Integer.MAX_VALUE;
+        for(int i = 2; i < n + 1; i++){
+            for(int j = 1;; j++){
+                int k = j * j;
+                if(k > i) break;
+                if (k == i) {
+                    nums[i] = 1;
+                    break;
+                }
+                else nums[i] = Integer.min(nums[i],nums[i - k] + 1);
+            }
+        }
+        return nums[n];
+    }
+
+    @Test
+    public void test(){
+        int n = 7168;
+        System.out.println(numSquares(n));
+        System.out.println(numSquares2(n));
+        //System.out.println(numSquares(7168));
     }
 }
