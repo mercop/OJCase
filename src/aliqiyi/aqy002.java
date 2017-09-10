@@ -14,11 +14,12 @@ public class aqy002 {
         for (int i = 0; i < n; i++) {
             nums[i] = scanner.nextInt();
         }
-        int res = 1;
+        long res = 1;
         Arrays.sort(nums);
-        for(int i = 0 ; i < nums.length; i ++){
+        for (int i = 0; i < nums.length; i++) {
             res *= nums[i] - i;
+            if (res > 1000000007) res %= 1000000007;
         }
-        System.out.println(res);
+        System.out.println(res % 1000000007);
     }
 }
