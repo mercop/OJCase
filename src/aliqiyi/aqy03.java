@@ -11,15 +11,17 @@ public class aqy03 {
         String str = sc.nextLine();
         char[] chars = str.toCharArray();
         int count = 0;
+        int maxRight = 0;
         boolean visited[] = new boolean[str.length()];
         for(int i = 0; i < chars.length;i ++){
             int curCount = 1;
             if(visited[i]) continue;
             for(int j = i + 1; j < chars.length;j ++){
-                if(chars[i] == chars[j]) {
+                if(chars[i] == chars[j] && j > maxRight) {
                     if(!visited[j]){
                         count +=2;
                         curCount ++;
+                        maxRight = j;
                         visited[j] = true;
                         if(curCount == 2) break;
                     }
