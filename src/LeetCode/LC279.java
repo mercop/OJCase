@@ -8,6 +8,7 @@ import java.util.LinkedList;
 /**
  * Created by mercop on 2017/8/23.
  * 寻找最少的完全平方数，是他们的和为n,转为有向图层次遍历
+ *
  */
 public class LC279 {
 

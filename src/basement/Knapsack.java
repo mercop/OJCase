@@ -2,6 +2,9 @@ package basement;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by mercop on 2017/9/6.
  */
@@ -34,6 +37,50 @@ public class Knapsack {
             }
         }
         return memo[n - 1][w];
+    }
+
+    @Test
+    public void tets(){
+        int[] w = new int[]{1, 2, 3};
+        int[] v = new int[]{6, 12, 10};
+        System.out.println(getAllknapsack(w, v, 5));
+    }
+
+    //获得最优背包价值的背包序号
+    public static List<Integer> getAllknapsack(int[] weight, int[] values, int w) {
+        int n = weight.length;
+        int[][] memo = new int[n][w + 1];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < w + 1; j++) {
+                memo[i][j] = -1;
+            }
+
+        for (int j = 0; j < w + 1; j++) {
+            memo[0][j] = j >= weight[0] ? values[0] : 0;
+        }
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < w + 1; j++) {
+                memo[i][j] = memo[i - 1][j];
+                if (j >= weight[i]) {
+                    memo[i][j] = Integer.max(memo[i][j], values[i] + memo[i - 1][j - weight[i]]);
+                }
+            }
+        }
+        int cur = memo[n - 1][w];
+        int x = n -1;
+        int y = w;
+        List<Integer> res = new ArrayList<>();
+        while(cur > 0 && x >= 1 && y >= 0){
+            if(cur != memo[x - 1][y]){
+                res.add(x);
+                y -= weight[x];
+                x--;
+            } else{
+                res.add(x - 1);
+                x--;
+            }
+        }
+        return res;
     }
 
     //背包问题02 - 空间复杂度优化O(2 * C)
