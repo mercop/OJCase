@@ -1,6 +1,5 @@
 package contest.baidu;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -32,6 +31,9 @@ public class baidu02 {
             }
 
         }
-        System.out.println(Arrays.toString(res));
+        for(int i = 0 ; i < res.length -1; i++){
+            System.out.print(res[i] +" ");
+        }
+        System.out.print(res[res.length -1]);
     }
 }
