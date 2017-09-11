@@ -1,4 +1,4 @@
-package contest.lc;
+package contest.LC;
 
 import java.util.BitSet;
 import java.util.HashSet;

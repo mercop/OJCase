@@ -1,4 +1,4 @@
-package contest.lc;
+package contest.LC;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

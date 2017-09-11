@@ -15,7 +15,6 @@ import java.util.Scanner;
  * 顺序数构成BST,找到三数节点的共同祖先
  */
 
-
 public class test01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

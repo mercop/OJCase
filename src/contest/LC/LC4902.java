@@ -1,4 +1,4 @@
-package contest.lc;
+package contest.LC;
 
 /**
  * Created by mercop on 2017/9/10.

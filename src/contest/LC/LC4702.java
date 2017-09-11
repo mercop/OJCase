@@ -1,4 +1,4 @@
-package contest.lc;
+package contest.LC;
 
 /**
  *  Input: [113, 215, 221]
