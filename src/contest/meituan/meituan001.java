@@ -12,12 +12,9 @@ public class meituan001 {
         int nums[] = new int[n];
 
         int digitCount[] = new int[n];
-        int lastThreeNumsCount[] = new int[n];
+
         for(int i =0 ; i< n;i++){
             nums[i] = sc.nextInt();
-            //long res[] = getDigitCount(nums[i]);
-//            digitCount[i] = res[0];
-//            lastThreeNumsCount[i] =res[1];
         }
         long temp = 0;
         int res = 0;
@@ -34,8 +31,6 @@ public class meituan001 {
 
     public static boolean getDigitCount(long num){
         if(num / 1000 == 0) return num%7 == 0? true:false;
-        long res[] = new long[2];
-        int total = 0;
         int three = (int)num % 1000;
         num = num /1000;
 
