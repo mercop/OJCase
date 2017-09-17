@@ -1,18 +1,18 @@
-package LeetCode;
+package contest.haoweilai;
+
+import model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mercop on 2017/8/28.
-
+ * Created by mercop on 2017/9/15.
  */
-public class LC113 {
+
+public class hwl02 {
 
     public static void main(String[] args) {
-        TreeNode node = new TreeNode(1);
-        node.left = new TreeNode(2);
-        node.right = new TreeNode(3);
+        TreeNode node = TreeNode.createTree(new int[]{1, 2, 3, 4, 5});
         System.out.println(pathSum(node));
     }
 
@@ -36,15 +36,14 @@ public class LC113 {
             temp.remove(temp.size() - 1);
         }
     }
-
 }
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
+//
+//class TreeNode {
+//    int val;
+//    TreeNode left;
+//    TreeNode right;
+//
+//    TreeNode(int x) {
+//        val = x;
+//    }
+//}
